@@ -2,9 +2,7 @@ class ApplicationController < ActionController::Base
 
   private
     def filtering_params(params)
-      filters = params.slice(:name_filter, :artist_filter)
-      puts filters
-      filters
+      params.slice(:name_filter, :artist_filter)
     end
     
     def filter_page(objects, page_object={:page => 1, :size => 20})
