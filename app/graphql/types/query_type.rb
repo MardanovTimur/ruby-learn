@@ -14,17 +14,14 @@ module Types
 
     field :tracks, [TrackType], null: true do
       description "Find all tracks"
-      argument :search, String, required: true
+      argument :name, String, required: false
+      argument :artist, String, required: false
     end
 
-    def tracks(search:)
-      puts search
+    def tracks(**args)
       filter_params = {
-        "name_filter": search,
-        "artist_filter": search
-      }
-      filter_params = filter_params.slice(:name_filter, :artist_filter)
-      puts filter_params
+        :name_filter => args[:name], 
+        :artist_filter => args[:artist]}
       Track.filter(filter_params)
     end
 
