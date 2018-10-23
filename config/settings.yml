@@ -2,3 +2,7 @@ last_fm:
   api_key: b8015c4ce3b98cbb979cf4b295c55d31
   secret: 709cc28b8a8b3bba5a3319e094d73153
   token: Pbk597UYGoM50Z4heLDgUsb0xexXwMze
+
+spotify:
+  api_key: 3a5a3249d7864438b69fbb5eb0f0dac1
+  secret: 0ab57635ee294173a8140564f3d63366

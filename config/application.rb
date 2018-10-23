@@ -1,12 +1,13 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'config'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-RSpotify::authenticate("3a5a3249d7864438b69fbb5eb0f0dac1", "0ab57635ee294173a8140564f3d63366")
+RSpotify::authenticate(Settings.spotify.api_key, Settings.spotify.secret)
 
 
 module Project

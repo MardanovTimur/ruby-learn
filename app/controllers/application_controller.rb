@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
           objects = objects.per(page_object[:size])
         end
       else
-        objects = objects.page(1).per(20)
+        objects = objects.page(1)
       end
       return objects
     end
