@@ -16,7 +16,8 @@ namespace :fetch_and_save do
     artist = artists[0]
 
     top_tracks = artist.top_tracks(:US)
-
+    
+    # Track.transaction do
     top_tracks.each do |track|
       Track.create(
         name: track.name,
@@ -25,6 +26,7 @@ namespace :fetch_and_save do
         streamable: true
       )
     end
+    # end
 
   end
   
